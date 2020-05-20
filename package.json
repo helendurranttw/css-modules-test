@@ -1,0 +1,52 @@
+{
+  "name": "css-modules-test",
+  "version": "0.0.1",
+  "description": "CSS Modules components test",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "yarn build:js && yarn build:css",
+    "build:js": "babel src -d build --config-file ./babel.config.json",
+    "build:css": "cpx 'src/**/*.{module.css,css}' build",
+    "clean": "rm -rf build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-react-jsx": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.4.5",
+    "@transferwise/eslint-config": "^6.0.0",
+    "babel-preset-minify": "^0.5.1",
+    "cpx": "^1.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "prettier": "^2.0.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.2",
+    "@transferwise/neptune-css": "^1.0.0",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-required-if": "^1.0.3"
+  },
+  "browserslist": [
+    "Chrome >=71",
+    "Firefox >=71",
+    "iOS >=11",
+    "Safari >=11.1",
+    "IE 11",
+    "Opera >=65",
+    "Edge >=18"
+  ],
+  "prettier": "@transferwise/eslint-config/.prettierrc.js"
+}
