@@ -20,7 +20,7 @@ TODO
 
 This package isn't published, so clone the repo, build, and link it for use in your project:
 
-```
+```shell
 git clone https://github.com/helendurranttw/css-modules-test.git
 cd css-modules-test
 yarn
@@ -40,7 +40,7 @@ And you should be good to go. If you run `yarn install` on your repository, the 
 
 To use a component:
 
-```
+```jsx
 import Alert from "css-modules-test/build/alert/alert";
 
 // ....
