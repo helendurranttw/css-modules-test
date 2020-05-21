@@ -1,44 +1,37 @@
-[![CircleCI](https://circleci.com/gh/transferwise/neptune-web.svg?style=shield)](https://circleci.com/gh/transferwise/neptune-web) [![NPM](https://badge.fury.io/js/%40transferwise%2Fcomponents.svg)](https://www.npmjs.com/package/@transferwise/components)
+# CSS Modules Test
 
-# Neptune Web React Components
+This is a simple test demonstrating some components using CSS Modules.
 
-Neptune is the Design System built by and used at TransferWise. Neptune Web is the Neptune framework for Web. Neptune Web provides a way to build high quality, consistent user experiences on the web with ease.
+# To use
 
-This is the Neptune Web React component library. It works well with [Neptune CSS](https://github.com/transferwise/neptune-web/tree/master/packages/css).
-
-## Usage
-
-Neptune Components are published to npm as [@transferwise/components](https://www.npmjs.com/package/@transferwise/components).
-
-Install `@transferwise/components` and its peer dependencies. **Note:** currency-flags is only required if you're using the [Money Input](https://transferwise.github.io/neptune-web/components/MoneyInput) or if you're using flags on the [Select](https://transferwise.github.io/neptune-web/components/Select).
+This package isn't published, so clone the repo, build, and link it for use in your project:
 
 ```
-# yarn
-yarn add @transferwise/components react react-dom prop-types transferwise/bootstrap currency-flags
-
-# npm
-npm install @transferwise/components react react-dom prop-types transferwise/bootstrap currency-flags
+git clone https://github.com/helendurranttw/css-modules-test.git
+cd css-modules-test
+yarn
+yarn build
+yarn link
 ```
 
-```js
-// This line only needs to be imported once in your application
-import 'bootstrap/dist/css/bootstrap.css';
+In your project, add the following to your dependencies in `package.json`:
 
-import { Button } from '@transferwise/components';
+`"css-modules-test": "0.0.1"`
 
-export default function Hello() {
-  return (
-    <Button size={Button.Size.SMALL} block={true}>
-      Hello Neptune
-    </Button>
-  );
-}
+Then run:
+
+`yarn link css-modules-test`
+
+And you should be good to go. If you run `yarn install` on your repository, the linked pacakage may appear to fail to install, but when you run it should work.
+
+To use a component:
+
 ```
+import Alert from "css-modules-test/build/alert/alert";
 
-## Documentation
+// ....
 
-Visit the [docs](https://transferwise.github.io/neptune-web) for information on getting started, usage information and examples for each component.
-
-## Contributing
-
-We love contribution! 🙏 Read [the guide](https://github.com/transferwise/neptune-web/blob/master/packages/components/CONTRIBUTING.md) to get started.
+  <Alert dismissible={true} size="sm" special={true} type="success" onDismiss={() => alert('dismissed')}>
+      <p>Everything went well and life is amazing.</p>
+  </Alert>
+```
