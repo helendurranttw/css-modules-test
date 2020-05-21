@@ -2,6 +2,20 @@
 
 This is a simple test demonstrating some components using CSS Modules.
 
+# Requirements
+
+- Tree-shaking: the consuming library should be able to import only what it needs
+- Scoped CSS: there must be a way to scope CSS per component
+- Global CSS: there must be a way to use global CSS, alongside scoped CSS
+- No CSS imports on Components: Components cannot import CSS files (CSS modules are ok)<sup>\*</sup>
+- Shared styles: there must be a way to share CSS across components without duplicating the CSS
+
+<sup>\*</sup> Because we're not sure what order components will be loaded in, unscoped CSS is dangerous to import in an unspecified order. CSS imports will error in the latest version of Next.
+
+# How well did we do?
+
+TODO
+
 # To use
 
 This package isn't published, so clone the repo, build, and link it for use in your project:
